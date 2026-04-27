@@ -18,19 +18,22 @@ const timelineByLanguage: Record<UserLanguage, TimelineEntry[]> = {
       id: "campaign-period",
       title: "Understand your constituency and ballot basics",
       window: "Preparation period",
-      description: "Learn what documents to carry, what happens at the polling station, and how the voting process works."
+      description:
+        "Learn what documents to carry, what happens at the polling station, and how the voting process works."
     },
     {
       id: "election-week",
       title: "Plan your voting day",
       window: "One week before polling",
-      description: "Decide when you will go, how you will travel, and which official resources you will use if information changes."
+      description:
+        "Decide when you will go, how you will travel, and which official resources you will use if information changes."
     },
     {
       id: "polling-day",
       title: "Vote with confidence",
       window: "Polling day",
-      description: "Carry the right identification, follow the polling process, and use official help desks if you need assistance."
+      description:
+        "Carry the right identification, follow the polling process, and use official help desks if you need assistance."
     },
     {
       id: "results-and-followup",
@@ -62,7 +65,8 @@ const timelineByLanguage: Record<UserLanguage, TimelineEntry[]> = {
       id: "election-week",
       title: "मतदान दिवस की योजना बनाएं",
       window: "मतदान से एक सप्ताह पहले",
-      description: "निर्णय लें कि कब जाना है, कैसे पहुंचना है और यदि जानकारी बदले तो किन आधिकारिक स्रोतों पर भरोसा करना है।"
+      description:
+        "निर्णय लें कि कब जाना है, कैसे पहुंचना है और यदि जानकारी बदले तो किन आधिकारिक स्रोतों पर भरोसा करना है।"
     },
     {
       id: "polling-day",

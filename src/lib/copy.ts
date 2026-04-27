@@ -106,9 +106,11 @@ const copy: Record<UserLanguage, UiCopy> = {
       fallbackAnswer: "Fallback answer",
       refusalAnswer: "Unsupported request",
       timelineTitle: "Understand the election timeline",
-      timelineDescription: "The highlighted stage reflects the context selected above so users can orient themselves immediately.",
+      timelineDescription:
+        "The highlighted stage reflects the context selected above so users can orient themselves immediately.",
       resourcesTitle: "Trusted explainer cards",
-      resourcesDescription: "Every recommendation keeps users close to official resources instead of free-floating advice."
+      resourcesDescription:
+        "Every recommendation keeps users close to official resources instead of free-floating advice."
     },
     buttons: {
       addCalendar: "Add Google Calendar reminder",
@@ -238,7 +240,8 @@ const copy: Record<UserLanguage, UiCopy> = {
       fallbackAnswer: "फॉलबॅक उत्तर",
       refusalAnswer: "हा विनंती प्रकार समर्थित नाही",
       timelineTitle: "निवडणूक टाइमलाइन समजून घ्या",
-      timelineDescription: "हायलाइट केलेला टप्पा तुम्ही निवडलेल्या स्थितीशी जुळतो, त्यामुळे तुम्ही लगेच स्वतःची स्थिती समजू शकता.",
+      timelineDescription:
+        "हायलाइट केलेला टप्पा तुम्ही निवडलेल्या स्थितीशी जुळतो, त्यामुळे तुम्ही लगेच स्वतःची स्थिती समजू शकता.",
       resourcesTitle: "विश्वसनीय माहिती कार्ड्स",
       resourcesDescription: "प्रत्येक शिफारस तुम्हाला तर्काधारित सल्ल्याऐवजी अधिकृत स्रोतांजवळ ठेवते."
     },

@@ -1,28 +1,17 @@
-export type RegistrationStatus = "not-started" | "in-progress" | "completed";
+export type {
+  AgeBand,
+  AssistantRequest,
+  ElectionStage,
+  RegistrationStatus,
+  UserLanguage,
+  UserProfile,
+  VoterExperience
+} from "@/lib/profile-schema";
 
-export type ElectionStage =
-  | "registration-open"
-  | "registration-closing"
-  | "campaign-period"
-  | "election-week"
-  | "polling-day"
-  | "results-and-followup";
-
-export type UserLanguage = "English" | "Hindi" | "Marathi";
-
-export type VoterExperience = "first-time" | "returning";
-
-export interface UserProfile {
-  name: string;
-  ageBand: "18-21" | "22-29" | "30+";
-  experience: VoterExperience;
-  registrationStatus: RegistrationStatus;
-  language: UserLanguage;
-  stage: ElectionStage;
-}
+import type { ElectionStage } from "@/lib/profile-schema";
 
 export interface TimelineEntry {
-  id: string;
+  id: ElectionStage;
   title: string;
   window: string;
   description: string;

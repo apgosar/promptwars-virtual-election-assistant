@@ -10,9 +10,12 @@ export function buildFallbackAssistantAnswer(question: string, profile: UserProf
     return {
       sourceMode: "refusal",
       answer: localize(profile, {
-        English: "I can help explain the election process, timelines, registration, and polling-day steps, but I cannot recommend candidates or persuade you to vote a certain way.",
-        Hindi: "मैं चुनाव प्रक्रिया, समयरेखा, पंजीकरण और मतदान दिवस के चरण समझाने में मदद कर सकता हूँ, लेकिन मैं किसी उम्मीदवार की सिफारिश या आपको किसी विशेष तरीके से वोट देने के लिए प्रेरित नहीं कर सकता।",
-        Marathi: "मी निवडणूक प्रक्रिया, वेळापत्रक, नोंदणी आणि मतदान दिवसाची पावले समजावून सांगू शकतो, पण मी कोणत्याही उमेदवाराची शिफारस करू शकत नाही किंवा तुम्हाला विशिष्ट पद्धतीने मतदान करण्यास प्रवृत्त करू शकत नाही."
+        English:
+          "I can help explain the election process, timelines, registration, and polling-day steps, but I cannot recommend candidates or persuade you to vote a certain way.",
+        Hindi:
+          "मैं चुनाव प्रक्रिया, समयरेखा, पंजीकरण और मतदान दिवस के चरण समझाने में मदद कर सकता हूँ, लेकिन मैं किसी उम्मीदवार की सिफारिश या आपको किसी विशेष तरीके से वोट देने के लिए प्रेरित नहीं कर सकता।",
+        Marathi:
+          "मी निवडणूक प्रक्रिया, वेळापत्रक, नोंदणी आणि मतदान दिवसाची पावले समजावून सांगू शकतो, पण मी कोणत्याही उमेदवाराची शिफारस करू शकत नाही किंवा तुम्हाला विशिष्ट पद्धतीने मतदान करण्यास प्रवृत्त करू शकत नाही."
       })
     };
   }

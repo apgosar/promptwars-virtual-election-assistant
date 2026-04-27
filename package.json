@@ -5,9 +5,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "eslint . --max-warnings=0",
     "test": "node --import tsx --test src/**/*.test.ts",
-    "test:watch": "node --import tsx --test --watch src/**/*.test.ts"
+    "test:coverage": "node --import tsx --test --experimental-test-coverage src/**/*.test.ts",
+    "test:watch": "node --import tsx --test --watch src/**/*.test.ts",
+    "validate": "npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {
     "@google/genai": "^1.50.1",
@@ -27,6 +32,7 @@
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.4",
     "jsdom": "^29.0.2",
+    "prettier": "^3.8.3",
     "tsx": "^4.21.0",
     "typescript": "^6.0.3"
   }

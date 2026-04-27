@@ -30,14 +30,14 @@ Core logic principles:
 1. User selects context in the personalization panel (except language, which is available in the top selector).
 2. Decision engine computes urgency, summary, and next steps.
 3. UI renders:
-	- Vertical connected election timeline with active stage highlighting.
-	- Recommended action list and Google Calendar reminder link.
-	- Trusted explainer resource cards.
+   - Vertical connected election timeline with active stage highlighting.
+   - Recommended action list and Google Calendar reminder link.
+   - Trusted explainer resource cards.
 4. User can ask process questions in the assistant panel.
 5. API route validates payload and:
-	- Returns guarded refusal for unsupported political prompts.
-	- Uses Gemini for valid process questions when `GEMINI_API_KEY` is configured.
-	- Falls back to deterministic localized guidance on API/model issues.
+   - Returns guarded refusal for unsupported political prompts.
+   - Uses Gemini for valid process questions when `GEMINI_API_KEY` is configured.
+   - Falls back to deterministic localized guidance on API/model issues.
 6. Profile context is persisted locally so users retain settings across refreshes.
 
 ## Assumptions made
@@ -62,13 +62,16 @@ Core logic principles:
 1. Install dependencies with `npm install`.
 2. Copy `.env.example` to `.env.local` and add `GEMINI_API_KEY` if you want live AI responses.
 3. Run the app with `npm run dev`.
-4. Run validation with `npm run lint` and `npm run test`.
+4. Run validation with `npm run validate`.
 
 ## Architecture
 
 - `src/app` contains the Next.js App Router entrypoints and API route.
-- `src/components` contains the interactive election assistant shell.
-- `src/lib` contains deterministic decision logic, content, and AI fallback logic.
+- `src/components` contains focused UI components for profile input, guidance, assistant chat, timeline, and resources.
+- `src/hooks` contains browser state and assistant request state.
+- `src/lib` contains deterministic decision logic, shared schemas, content, storage helpers, and AI fallback logic.
+
+See `docs/architecture.md` for the runtime flow and module boundaries. See `docs/quality.md` for the validation and testing strategy.
 
 ## Judging criteria coverage
 

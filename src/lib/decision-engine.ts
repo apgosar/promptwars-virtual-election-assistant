@@ -10,57 +10,73 @@ const languageTopics: Record<UserLanguage, string[]> = {
 };
 
 export function getGuidance(profile: UserProfile): GuidanceResult {
-  const isUrgentStage = profile.stage === "registration-closing" || profile.stage === "election-week" || profile.stage === "polling-day";
+  const isUrgentStage =
+    profile.stage === "registration-closing" || profile.stage === "election-week" || profile.stage === "polling-day";
   const isUnregistered = profile.registrationStatus !== "completed";
-  const urgency: GuidanceResult["urgency"] = isUnregistered && isUrgentStage ? "high" : isUrgentStage ? "medium" : "low";
+  const urgency: GuidanceResult["urgency"] =
+    isUnregistered && isUrgentStage ? "high" : isUrgentStage ? "medium" : "low";
 
   const nextSteps: string[] = [];
 
   if (isUnregistered) {
-    nextSteps.push(localize(profile.language, {
-      English: "Verify your voter registration status on the official Voters' Service Portal.",
-      Hindi: "आधिकारिक वोटर्स सर्विस पोर्टल पर अपनी मतदाता पंजीकरण स्थिति सत्यापित करें।",
-      Marathi: "अधिकृत मतदार सेवा पोर्टलवर तुमची मतदार नोंदणी स्थिती तपासा."
-    }));
-    nextSteps.push(localize(profile.language, {
-      English: "Gather identity and address documents before you start or update your application.",
-      Hindi: "आवेदन शुरू करने या अपडेट करने से पहले पहचान और पते से जुड़े दस्तावेज़ तैयार रखें।",
-      Marathi: "अर्ज सुरू किंवा अद्ययावत करण्यापूर्वी ओळख आणि पत्त्याची कागदपत्रे तयार ठेवा."
-    }));
+    nextSteps.push(
+      localize(profile.language, {
+        English: "Verify your voter registration status on the official Voters' Service Portal.",
+        Hindi: "आधिकारिक वोटर्स सर्विस पोर्टल पर अपनी मतदाता पंजीकरण स्थिति सत्यापित करें।",
+        Marathi: "अधिकृत मतदार सेवा पोर्टलवर तुमची मतदार नोंदणी स्थिती तपासा."
+      })
+    );
+    nextSteps.push(
+      localize(profile.language, {
+        English: "Gather identity and address documents before you start or update your application.",
+        Hindi: "आवेदन शुरू करने या अपडेट करने से पहले पहचान और पते से जुड़े दस्तावेज़ तैयार रखें।",
+        Marathi: "अर्ज सुरू किंवा अद्ययावत करण्यापूर्वी ओळख आणि पत्त्याची कागदपत्रे तयार ठेवा."
+      })
+    );
   } else {
-    nextSteps.push(localize(profile.language, {
-      English: "Review the polling process and confirm what identification to carry on voting day.",
-      Hindi: "मतदान प्रक्रिया की समीक्षा करें और मतदान दिवस पर कौन सा पहचान पत्र साथ रखना है, यह सुनिश्चित करें।",
-      Marathi: "मतदान प्रक्रिया पाहा आणि मतदानाच्या दिवशी कोणते ओळखपत्र बाळगायचे ते निश्चित करा."
-    }));
+    nextSteps.push(
+      localize(profile.language, {
+        English: "Review the polling process and confirm what identification to carry on voting day.",
+        Hindi: "मतदान प्रक्रिया की समीक्षा करें और मतदान दिवस पर कौन सा पहचान पत्र साथ रखना है, यह सुनिश्चित करें।",
+        Marathi: "मतदान प्रक्रिया पाहा आणि मतदानाच्या दिवशी कोणते ओळखपत्र बाळगायचे ते निश्चित करा."
+      })
+    );
   }
 
   if (profile.stage === "election-week" || profile.stage === "polling-day") {
-    nextSteps.push(localize(profile.language, {
-      English: "Plan how you will reach the polling station and save an election reminder to your calendar.",
-      Hindi: "मतदान केंद्र तक पहुंचने की योजना बनाएं और अपने कैलेंडर में चुनाव रिमाइंडर सहेजें।",
-      Marathi: "मतदान केंद्रापर्यंत कसे पोहोचायचे याची योजना करा आणि कॅलेंडरमध्ये निवडणूक स्मरणपत्र जतन करा."
-    }));
+    nextSteps.push(
+      localize(profile.language, {
+        English: "Plan how you will reach the polling station and save an election reminder to your calendar.",
+        Hindi: "मतदान केंद्र तक पहुंचने की योजना बनाएं और अपने कैलेंडर में चुनाव रिमाइंडर सहेजें।",
+        Marathi: "मतदान केंद्रापर्यंत कसे पोहोचायचे याची योजना करा आणि कॅलेंडरमध्ये निवडणूक स्मरणपत्र जतन करा."
+      })
+    );
   } else {
-    nextSteps.push(localize(profile.language, {
-      English: "Read the election timeline so you know what changes as polling day gets closer.",
-      Hindi: "चुनाव टाइमलाइन पढ़ें ताकि मतदान दिवस करीब आने पर क्या बदलता है, यह स्पष्ट रहे।",
-      Marathi: "निवडणूक टाइमलाइन वाचा, जेणेकरून मतदानाचा दिवस जवळ येताना काय बदलते ते समजेल."
-    }));
+    nextSteps.push(
+      localize(profile.language, {
+        English: "Read the election timeline so you know what changes as polling day gets closer.",
+        Hindi: "चुनाव टाइमलाइन पढ़ें ताकि मतदान दिवस करीब आने पर क्या बदलता है, यह स्पष्ट रहे।",
+        Marathi: "निवडणूक टाइमलाइन वाचा, जेणेकरून मतदानाचा दिवस जवळ येताना काय बदलते ते समजेल."
+      })
+    );
   }
 
   if (profile.experience === "first-time") {
-    nextSteps.push(localize(profile.language, {
-      English: "Open the explainer cards to understand what happens before, during, and after voting.",
-      Hindi: "जानकारी कार्ड खोलें और समझें कि मतदान से पहले, दौरान और बाद में क्या होता है।",
-      Marathi: "माहिती कार्ड उघडा आणि मतदानाच्या आधी, दरम्यान आणि नंतर काय होते ते समजून घ्या."
-    }));
+    nextSteps.push(
+      localize(profile.language, {
+        English: "Open the explainer cards to understand what happens before, during, and after voting.",
+        Hindi: "जानकारी कार्ड खोलें और समझें कि मतदान से पहले, दौरान और बाद में क्या होता है।",
+        Marathi: "माहिती कार्ड उघडा आणि मतदानाच्या आधी, दरम्यान आणि नंतर काय होते ते समजून घ्या."
+      })
+    );
   } else {
-    nextSteps.push(localize(profile.language, {
-      English: "Use the assistant for quick clarification if a step or deadline feels unclear.",
-      Hindi: "यदि कोई चरण या अंतिम तिथि स्पष्ट न लगे तो त्वरित स्पष्टीकरण के लिए सहायक का उपयोग करें।",
-      Marathi: "एखादा टप्पा किंवा अंतिम तारीख अस्पष्ट वाटल्यास जलद स्पष्टीकरणासाठी सहाय्यक वापरा."
-    }));
+    nextSteps.push(
+      localize(profile.language, {
+        English: "Use the assistant for quick clarification if a step or deadline feels unclear.",
+        Hindi: "यदि कोई चरण या अंतिम तिथि स्पष्ट न लगे तो त्वरित स्पष्टीकरण के लिए सहायक का उपयोग करें।",
+        Marathi: "एखादा टप्पा किंवा अंतिम तारीख अस्पष्ट वाटल्यास जलद स्पष्टीकरणासाठी सहाय्यक वापरा."
+      })
+    );
   }
 
   const headline = isUnregistered
@@ -84,19 +100,26 @@ export function getGuidance(profile: UserProfile): GuidanceResult {
     isUnregistered
       ? localize(profile.language, {
           English: "Your highest-value action is to confirm or complete voter registration through official channels.",
-          Hindi: "आपके लिए सबसे महत्वपूर्ण कदम है कि आधिकारिक माध्यम से मतदाता पंजीकरण की पुष्टि करें या उसे पूरा करें।",
-          Marathi: "तुमच्यासाठी सर्वात महत्त्वाचे पाऊल म्हणजे अधिकृत माध्यमातून मतदार नोंदणीची पडताळणी किंवा पूर्तता करणे."
+          Hindi:
+            "आपके लिए सबसे महत्वपूर्ण कदम है कि आधिकारिक माध्यम से मतदाता पंजीकरण की पुष्टि करें या उसे पूरा करें।",
+          Marathi:
+            "तुमच्यासाठी सर्वात महत्त्वाचे पाऊल म्हणजे अधिकृत माध्यमातून मतदार नोंदणीची पडताळणी किंवा पूर्तता करणे."
         })
       : localize(profile.language, {
-          English: "Your registration is marked complete, so the app is prioritizing readiness and polling-day clarity.",
-          Hindi: "आपका पंजीकरण पूरा दिख रहा है, इसलिए ऐप अब तैयारी और मतदान दिवस की स्पष्ट जानकारी को प्राथमिकता दे रहा है।",
-          Marathi: "तुमची नोंदणी पूर्ण झालेली दिसते, त्यामुळे अ‍ॅप आता तयारी आणि मतदान दिनाची स्पष्ट माहिती यांना प्राधान्य देत आहे."
+          English:
+            "Your registration is marked complete, so the app is prioritizing readiness and polling-day clarity.",
+          Hindi:
+            "आपका पंजीकरण पूरा दिख रहा है, इसलिए ऐप अब तैयारी और मतदान दिवस की स्पष्ट जानकारी को प्राथमिकता दे रहा है।",
+          Marathi:
+            "तुमची नोंदणी पूर्ण झालेली दिसते, त्यामुळे अ‍ॅप आता तयारी आणि मतदान दिनाची स्पष्ट माहिती यांना प्राधान्य देत आहे."
         }),
     profile.experience === "first-time"
       ? localize(profile.language, {
-          English: "Because this is a first-time journey, the recommendations lean toward simpler explainers and step-by-step help.",
+          English:
+            "Because this is a first-time journey, the recommendations lean toward simpler explainers and step-by-step help.",
           Hindi: "क्योंकि यह पहली बार का मतदान अनुभव है, इसलिए सुझाव सरल जानकारी और चरण-दर-चरण सहायता पर केंद्रित हैं।",
-          Marathi: "हा पहिल्यांदाचा मतदान अनुभव असल्यामुळे शिफारसी अधिक सोप्या माहितीवर आणि टप्प्याटप्प्याने मदतीवर केंद्रित आहेत."
+          Marathi:
+            "हा पहिल्यांदाचा मतदान अनुभव असल्यामुळे शिफारसी अधिक सोप्या माहितीवर आणि टप्प्याटप्प्याने मदतीवर केंद्रित आहेत."
         })
       : localize(profile.language, {
           English: "Because you have voted before, the recommendations stay concise and action-oriented.",
