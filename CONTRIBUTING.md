@@ -15,6 +15,11 @@ npm run validate
 ```
 
 The validation script checks formatting, linting, TypeScript, unit tests, and the production build.
+Run the browser and accessibility suite before major UI or flow changes:
+
+```bash
+npm run test:e2e
+```
 
 For focused checks:
 
@@ -24,6 +29,7 @@ npm run lint
 npm run typecheck
 npm run test
 npm run test:coverage
+npm run test:e2e
 npm run build
 ```
 

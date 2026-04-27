@@ -11,7 +11,9 @@ export function LanguageSelector({ label, language, options, onLanguageChange }:
   return (
     <section className="topbar" aria-label="Language selector">
       <div className="topbar-inner">
-        <span className="topbar-label">{label}</span>
+        <label className="topbar-label" htmlFor="page-language">
+          {label}
+        </label>
         <div className="topbar-select-wrap">
           <select
             id="page-language"
