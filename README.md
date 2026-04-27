@@ -32,6 +32,7 @@ Core logic principles:
 3. UI renders:
    - Vertical connected election timeline with active stage highlighting.
    - Recommended action list and Google Calendar reminder link.
+   - Google services showcase covering live and demo-ready integrations.
    - Trusted explainer resource cards.
 4. User can ask process questions in the assistant panel.
 5. API route validates payload and:
@@ -56,6 +57,20 @@ Core logic principles:
 - Trusted source cards linking to official resources
 - Google Calendar reminder generation
 - Gemini-backed assistant route with safe fallback behavior
+- Google services showcase for Maps, Programmable Search, Cloud Translation, Firebase/Firestore, Cloud Run, and Cloud Build
+
+## Google services integration
+
+| Service                         | Status          | How it is used                                                                                       |
+| ------------------------------- | --------------- | ---------------------------------------------------------------------------------------------------- |
+| Gemini API                      | Live            | Guarded process-question assistant with deterministic fallback.                                      |
+| Cloud Run                       | Live            | Hosts the deployed Next.js app.                                                                      |
+| Cloud Build + Artifact Registry | Live            | Builds and packages source deployments for Cloud Run.                                                |
+| Google Calendar                 | Live            | Generates reminder links for registration, document checks, and follow-up.                           |
+| Google Maps Platform            | Demo-ready mock | Displays seeded nearby help locations with Google Maps search links; ready for Places/Maps API keys. |
+| Programmable Search Engine      | Demo-ready mock | Shows official-domain election search results that can be replaced by the JSON API.                  |
+| Cloud Translation               | Demo-ready mock | Presents a provider boundary for translating dynamic explainer text beyond reviewed MVP copy.        |
+| Firebase Auth + Firestore       | Planned mock    | Outlines optional Google sign-in and checklist sync without storing political preferences.           |
 
 ## Getting started
 
@@ -80,4 +95,4 @@ See `docs/architecture.md` for the runtime flow and module boundaries. See `docs
 - Efficiency: rule-based guidance answers most needs without an LLM round trip
 - Testing: decision logic and assistant fallback paths are covered with Node test runner (`node --test` + `tsx`)
 - Accessibility: semantic sections, explicit labels, keyboard-friendly controls, and strong contrast
-- Google services: Gemini API integration and Google Calendar reminder generation
+- Google services: Gemini API, Cloud Run, Cloud Build, Google Calendar, and visible demo-ready surfaces for Maps, Programmable Search, Cloud Translation, and Firebase/Firestore

@@ -30,6 +30,7 @@ npm run test:e2e
 - Schema tests prevent frontend/API profile drift.
 - Storage tests verify local-storage recovery and invalid-data handling.
 - Copy/content tests catch missing localized labels, timeline entries, and official resource cards.
+- Google services tests verify the integration matrix, official search domains, Google Maps links, Calendar URLs, and translation previews.
 - Assistant service tests exercise Gemini success, empty response, thrown error, no-key fallback, and refusal behavior without calling a live model.
 - API route tests cover malformed JSON, invalid payloads, and deterministic no-key fallback behavior.
 - Playwright tests cover the localized profile/assistant flow and an axe-core accessibility scan of the initial page.

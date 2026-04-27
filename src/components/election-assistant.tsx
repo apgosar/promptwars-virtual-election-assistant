@@ -3,6 +3,7 @@
 import { AssistantPanel } from "@/components/assistant-panel";
 import { ElectionTimeline } from "@/components/election-timeline";
 import { GuidanceCard } from "@/components/guidance-card";
+import { GoogleServicesShowcase } from "@/components/google-services-showcase";
 import { LanguageSelector } from "@/components/language-selector";
 import { ProfileForm } from "@/components/profile-form";
 import { ResourceGrid } from "@/components/resource-grid";
@@ -58,6 +59,7 @@ export function ElectionAssistant() {
           ui={ui}
         />
       </section>
+      <GoogleServicesShowcase profile={profile} />
       <ElectionTimeline activeStage={profile.stage} entries={electionTimeline} ui={ui} />
       <ResourceGrid cards={explainerCards} ui={ui} />
     </main>
