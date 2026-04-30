@@ -24,7 +24,8 @@ export type OfficialSearchResult = {
   url: string;
 };
 
-export const googleServiceIntegrations: GoogleServiceIntegration[] = [{
+export const googleServiceIntegrations: GoogleServiceIntegration[] = [
+  {
     name: "Process explainer assistant",
     product: "Gemini API",
     mode: "live",

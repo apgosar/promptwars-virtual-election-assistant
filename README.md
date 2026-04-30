@@ -61,16 +61,16 @@ Core logic principles:
 
 ## Google services integration
 
-| Service                         | Status          | How it is used                                                                                       |
-| ------------------------------- | --------------- | ---------------------------------------------------------------------------------------------------- |
-| Gemini API                      | Live            | Guarded process-question assistant with deterministic fallback.                                      |
-| Cloud Run                       | Live            | Hosts the deployed Next.js app.                                                                      |
-| Cloud Build + Artifact Registry | Live            | Builds and packages source deployments for Cloud Run.                                                |
-| Google Calendar                 | Live            | Generates reminder links for registration, document checks, and follow-up.                           |
-| Google Maps Platform            | Live            | Renders interactive, functional map of India-specific polling locations using `@react-google-maps/api`.|
-| Firebase Auth + Firestore       | Live            | Handles "Sign in with Google" and securely persists user profile state to Firestore databases.       |
-| Programmable Search Engine      | Demo-ready mock | Shows official-domain election search results that can be replaced by the JSON API.                  |
-| Cloud Translation               | Demo-ready mock | Presents a provider boundary for translating dynamic explainer text beyond reviewed MVP copy.        |
+| Service                         | Status          | How it is used                                                                                          |
+| ------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------- |
+| Gemini API                      | Live            | Guarded process-question assistant with deterministic fallback.                                         |
+| Cloud Run                       | Live            | Hosts the deployed Next.js app.                                                                         |
+| Cloud Build + Artifact Registry | Live            | Builds and packages source deployments for Cloud Run.                                                   |
+| Google Calendar                 | Live            | Generates reminder links for registration, document checks, and follow-up.                              |
+| Google Maps Platform            | Live            | Renders interactive, functional map of India-specific polling locations using `@react-google-maps/api`. |
+| Firebase Auth + Firestore       | Live            | Handles "Sign in with Google" and securely persists user profile state to Firestore databases.          |
+| Programmable Search Engine      | Demo-ready mock | Shows official-domain election search results that can be replaced by the JSON API.                     |
+| Cloud Translation               | Demo-ready mock | Presents a provider boundary for translating dynamic explainer text beyond reviewed MVP copy.           |
 
 ## Getting started
 

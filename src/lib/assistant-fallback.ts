@@ -53,4 +53,5 @@ export function buildSystemPrompt(profile: UserProfile): string {
   ].join(" ");
 }
 
-const localize = (profile: UserProfile, values: Record<UserProfile["language"], string>): string => values[profile.language];
+const localize = (profile: UserProfile, values: Record<UserProfile["language"], string>): string =>
+  values[profile.language];

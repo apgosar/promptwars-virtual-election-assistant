@@ -12,7 +12,7 @@ const cspHeader = `
     frame-ancestors 'none';
     frame-src 'self' https://*.firebaseapp.com;
     connect-src 'self' wss://*.firebaseio.com https://*.googleapis.com;
-`.replace(/\n/g, '');
+`.replace(/\n/g, "");
 
 const nextConfig: NextConfig = {
   async headers() {
@@ -22,12 +22,12 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: cspHeader,
-          },
-        ],
-      },
+            value: cspHeader
+          }
+        ]
+      }
     ];
-  },
+  }
 };
 
 export default nextConfig;

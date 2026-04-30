@@ -38,9 +38,9 @@ describe("writeProfileToStorage", () => {
         }
       }
     } as any;
-    
+
     writeProfileToStorage({ ...INITIAL_PROFILE, language: "Hindi" });
-    
+
     // Cleanup
     delete (global as any).window;
   });

@@ -14,9 +14,7 @@ test("supports the localized profile and assistant flow", async ({ page }) => {
   await page.goto("/");
 
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Understand what to do next");
-  await expect(
-    page.getByRole("heading", { name: "Integrated Google platform touchpoints" })
-  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Integrated Google platform touchpoints" })).toBeVisible();
   await expect(page.getByText("Google Maps Platform")).toBeVisible();
   await expect(page.getByText("Cloud Translation", { exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: "Verify voter registration" })).toHaveAttribute(

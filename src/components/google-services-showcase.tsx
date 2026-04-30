@@ -29,8 +29,8 @@ export function GoogleServicesShowcase({ profile }: GoogleServicesShowcaseProps)
           Integrated Google platform touchpoints
         </h2>
         <p className="supporting-text">
-          Gemini, Cloud Run, Google Maps, and Firebase Auth are live, while Programmable Search and Translation are shown as
-          production-ready integration surfaces with safe mock data for the hackathon demo.
+          Gemini, Cloud Run, Google Maps, and Firebase Auth are live, while Programmable Search and Translation are
+          shown as production-ready integration surfaces with safe mock data for the hackathon demo.
         </p>
       </div>
 

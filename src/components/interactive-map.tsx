@@ -13,23 +13,23 @@ type Location = {
 const defaultLocations: Location[] = [
   { name: "BMC Office Ward A", lat: 18.9322, lng: 72.8344, address: "Shahid Bhagat Singh Road, Fort, Mumbai" },
   { name: "Public School Election Center", lat: 18.9389, lng: 72.835, address: "CSMT Area, Mumbai" },
-  { name: "Community Hall Polling Station", lat: 18.945, lng: 72.832, address: "Marine Lines, Mumbai" },
+  { name: "Community Hall Polling Station", lat: 18.945, lng: 72.832, address: "Marine Lines, Mumbai" }
 ];
 
 const mapContainerStyle = {
   width: "100%",
   height: "400px",
-  borderRadius: "12px",
+  borderRadius: "12px"
 };
 
 const center = {
   lat: 18.9322,
-  lng: 72.8344,
+  lng: 72.8344
 };
 
 export function InteractiveMap() {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""
   });
 
   const [activeMarker, setActiveMarker] = React.useState<Location | null>(null);
@@ -37,7 +37,7 @@ export function InteractiveMap() {
   const options = useMemo(
     () => ({
       disableDefaultUI: true,
-      zoomControl: true,
+      zoomControl: true
     }),
     []
   );

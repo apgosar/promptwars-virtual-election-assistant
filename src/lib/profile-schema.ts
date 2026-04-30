@@ -4,7 +4,14 @@ export const AGE_BANDS = ["18-21", "22-29", "30+"] as const;
 export const VOTER_EXPERIENCES = ["first-time", "returning"] as const;
 export const REGISTRATION_STATUSES = ["not-started", "in-progress", "completed"] as const;
 export const USER_LANGUAGES = ["English", "Hindi", "Marathi"] as const;
-export const ELECTION_STAGES = ["registration-open", "registration-closing", "campaign-period", "election-week", "polling-day", "results-and-followup"] as const;
+export const ELECTION_STAGES = [
+  "registration-open",
+  "registration-closing",
+  "campaign-period",
+  "election-week",
+  "polling-day",
+  "results-and-followup"
+] as const;
 
 export const userProfileSchema = z.object({
   name: z.string().max(50),

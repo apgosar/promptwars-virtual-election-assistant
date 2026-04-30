@@ -10,6 +10,7 @@ export function usePersistedProfile() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setProfile(readProfileFromStorage());
     setIsMounted(true);
   }, []);
@@ -31,12 +32,12 @@ export function usePersistedProfile() {
         if (storedProfile) {
           setProfile({
             ...storedProfile,
-            name: storedProfile.name || currentUser.displayName || "",
+            name: storedProfile.name || currentUser.displayName || ""
           });
         } else {
           setProfile((prev) => ({
             ...prev,
-            name: currentUser.displayName || prev.name,
+            name: currentUser.displayName || prev.name
           }));
         }
       }
