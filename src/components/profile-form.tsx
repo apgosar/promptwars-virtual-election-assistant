@@ -1,6 +1,7 @@
 import { AGE_BANDS, ELECTION_STAGES, REGISTRATION_STATUSES, VOTER_EXPERIENCES } from "@/lib/profile-schema";
 import { GuidanceResult, UserProfile } from "@/lib/types";
 import { getUiCopy } from "@/lib/copy";
+import { AuthButtons } from "./auth-buttons";
 
 type ProfileFormProps = {
   guidance: GuidanceResult;
@@ -16,9 +17,12 @@ export function ProfileForm({ guidance, profile, ui, onProfileChange }: ProfileF
         <h2 className="card-title" id="profile-title">
           {ui.profileTitle}
         </h2>
-        <span className={`urgency-badge urgency-${guidance.urgency}`}>
-          {guidance.urgency} {ui.urgencySuffix}
-        </span>
+        <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+          <AuthButtons />
+          <span className={`urgency-badge urgency-${guidance.urgency}`}>
+            {guidance.urgency} {ui.urgencySuffix}
+          </span>
+        </div>
       </div>
       <p className="supporting-text">{ui.profileDescription}</p>
       <div className="fields">

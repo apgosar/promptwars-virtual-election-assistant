@@ -6,6 +6,7 @@ import {
   officialSearchResults
 } from "@/lib/google-services";
 import { UserProfile } from "@/lib/types";
+import { InteractiveMap } from "./interactive-map";
 
 type GoogleServicesShowcaseProps = {
   profile: UserProfile;
@@ -25,10 +26,10 @@ export function GoogleServicesShowcase({ profile }: GoogleServicesShowcaseProps)
       <div className="section-header">
         <span className="eyebrow">Google services</span>
         <h2 className="section-title" id="google-services-title">
-          Integrated and demo-ready Google platform touchpoints
+          Integrated Google platform touchpoints
         </h2>
         <p className="supporting-text">
-          Gemini and Cloud Run are live, while Maps, Programmable Search, Translation, and Firebase are shown as
+          Gemini, Cloud Run, Google Maps, and Firebase Auth are live, while Programmable Search and Translation are shown as
           production-ready integration surfaces with safe mock data for the hackathon demo.
         </p>
       </div>
@@ -50,15 +51,11 @@ export function GoogleServicesShowcase({ profile }: GoogleServicesShowcaseProps)
       <div className="google-demo-grid">
         <article className="service-card map-card" aria-labelledby="maps-demo-title">
           <div className="status-row">
-            <span className="service-status service-status-demo">Google Maps mock</span>
+            <span className="service-status service-status-live">Google Maps live</span>
             <span className="tiny">Places-ready</span>
           </div>
           <h3 id="maps-demo-title">Nearby election help finder</h3>
-          <div className="map-preview" aria-hidden="true">
-            <span className="map-pin map-pin-a" />
-            <span className="map-pin map-pin-b" />
-            <span className="map-pin map-pin-c" />
-          </div>
+          <InteractiveMap />
           <ul className="location-list">
             {demoPollingLocations.map((location) => (
               <li key={location.name}>

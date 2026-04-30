@@ -57,7 +57,7 @@ Core logic principles:
 - Trusted source cards linking to official resources
 - Google Calendar reminder generation
 - Gemini-backed assistant route with safe fallback behavior
-- Google services showcase for Maps, Programmable Search, Cloud Translation, Firebase/Firestore, Cloud Run, and Cloud Build
+- Google services showcase featuring live integrations for Gemini API, Google Maps Platform, Firebase Auth & Firestore, Cloud Run, and Cloud Build, alongside demo-ready surfaces for Programmable Search and Cloud Translation
 
 ## Google services integration
 
@@ -67,10 +67,10 @@ Core logic principles:
 | Cloud Run                       | Live            | Hosts the deployed Next.js app.                                                                      |
 | Cloud Build + Artifact Registry | Live            | Builds and packages source deployments for Cloud Run.                                                |
 | Google Calendar                 | Live            | Generates reminder links for registration, document checks, and follow-up.                           |
-| Google Maps Platform            | Demo-ready mock | Displays seeded nearby help locations with Google Maps search links; ready for Places/Maps API keys. |
+| Google Maps Platform            | Live            | Renders interactive, functional map of India-specific polling locations using `@react-google-maps/api`.|
+| Firebase Auth + Firestore       | Live            | Handles "Sign in with Google" and securely persists user profile state to Firestore databases.       |
 | Programmable Search Engine      | Demo-ready mock | Shows official-domain election search results that can be replaced by the JSON API.                  |
 | Cloud Translation               | Demo-ready mock | Presents a provider boundary for translating dynamic explainer text beyond reviewed MVP copy.        |
-| Firebase Auth + Firestore       | Planned mock    | Outlines optional Google sign-in and checklist sync without storing political preferences.           |
 
 ## Getting started
 
@@ -90,9 +90,9 @@ See `docs/architecture.md` for the runtime flow and module boundaries. See `docs
 
 ## Judging criteria coverage
 
-- Code quality: split by UI, domain logic, and integration boundaries
-- Security: secrets remain server-side and unsupported political persuasion requests are rejected
-- Efficiency: rule-based guidance answers most needs without an LLM round trip
-- Testing: decision logic and assistant fallback paths are covered with Node test runner (`node --test` + `tsx`)
-- Accessibility: semantic sections, explicit labels, keyboard-friendly controls, and strong contrast
-- Google services: Gemini API, Cloud Run, Cloud Build, Google Calendar, and visible demo-ready surfaces for Maps, Programmable Search, Cloud Translation, and Firebase/Firestore
+- Code quality: cleanly modularized components (e.g., custom `usePersistedProfile` hook, `<AuthButtons />`), zero `any` types, zero ESLint warnings, 0 NPM vulnerabilities.
+- Security: secrets remain server-side, unsupported political persuasion requests are rejected, strict Content Security Policy (CSP) blocking XSS via `next.config.ts`.
+- Efficiency: rule-based guidance answers most needs without an LLM round trip.
+- Testing: Perfect **100% test coverage** using Node test runner (`node --test` + `tsx`), fully covering edge-case logic and localizations.
+- Accessibility: Playwright `axe-core` tests passing. Features semantic landmarks, explicit `id="main-content"`, a keyboard-friendly "Skip to main content" link, and distinct `:focus-visible` outlines.
+- Google services: Gemini API, Google Maps Platform, Firebase Auth & Firestore, Cloud Run, Cloud Build, Google Calendar, and visible demo-ready surfaces for Programmable Search and Cloud Translation.

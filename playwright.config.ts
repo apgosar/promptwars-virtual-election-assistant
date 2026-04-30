@@ -5,14 +5,8 @@ export default defineConfig({
   fullyParallel: true,
   reporter: process.env.CI ? "github" : "list",
   use: {
-    baseURL: "http://localhost:3100",
+    baseURL: "http://localhost:3000",
     trace: "on-first-retry"
-  },
-  webServer: {
-    command: "npm run dev -- -p 3100",
-    url: "http://localhost:3100",
-    reuseExistingServer: false,
-    timeout: 120_000
   },
   projects: [
     {

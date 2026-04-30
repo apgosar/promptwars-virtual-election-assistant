@@ -24,8 +24,7 @@ export type OfficialSearchResult = {
   url: string;
 };
 
-export const googleServiceIntegrations: GoogleServiceIntegration[] = [
-  {
+export const googleServiceIntegrations: GoogleServiceIntegration[] = [{
     name: "Process explainer assistant",
     product: "Gemini API",
     mode: "live",
@@ -49,9 +48,9 @@ export const googleServiceIntegrations: GoogleServiceIntegration[] = [
   {
     name: "Nearby help finder",
     product: "Google Maps Platform",
-    mode: "demo",
-    summary: "Shows a mock polling/help-center finder with direct Google Maps searches.",
-    implementation: "Seeded demo locations now; Places/Maps JavaScript API can replace the mock data with an API key."
+    mode: "live",
+    summary: "Interactive map showing nearby polling/help centers.",
+    implementation: "Live interactive map using @react-google-maps/api and Google Maps JavaScript API."
   },
   {
     name: "Official resource search",
@@ -70,10 +69,10 @@ export const googleServiceIntegrations: GoogleServiceIntegration[] = [
   {
     name: "Saved checklist",
     product: "Firebase Auth + Firestore",
-    mode: "planned",
-    summary: "Shows the path for optional Google sign-in and anonymous checklist sync.",
+    mode: "live",
+    summary: "Live Firebase integration for Google sign-in and profile synchronization.",
     implementation:
-      "Local-only MVP today; Firestore can persist checklist progress without storing political preferences."
+      "Uses Firebase Authentication to sign in with Google, and Firestore to persist and sync user preferences."
   }
 ];
 

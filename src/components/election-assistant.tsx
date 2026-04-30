@@ -22,7 +22,7 @@ export function ElectionAssistant() {
   const { assistantResponse, askAssistant, isPending, question, setQuestion } = useAssistantResponse(profile);
 
   return (
-    <main className="page-shell">
+    <main id="main-content" className="page-shell">
       <LanguageSelector
         label={ui.labels.language}
         language={profile.language}

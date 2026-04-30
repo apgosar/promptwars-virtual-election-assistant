@@ -25,3 +25,23 @@ describe("parseStoredProfile", () => {
     assert.deepEqual(profile, INITIAL_PROFILE);
   });
 });
+
+describe("writeProfileToStorage", () => {
+  it("writes the profile to localStorage", () => {
+    const { writeProfileToStorage, PROFILE_STORAGE_KEY } = require("./profile-storage");
+    // Mock window and localStorage
+    global.window = {
+      localStorage: {
+        setItem: (key: string, value: string) => {
+          assert.equal(key, PROFILE_STORAGE_KEY);
+          assert.match(value, /Hindi/);
+        }
+      }
+    } as any;
+    
+    writeProfileToStorage({ ...INITIAL_PROFILE, language: "Hindi" });
+    
+    // Cleanup
+    delete (global as any).window;
+  });
+});

@@ -32,4 +32,21 @@ describe("buildFallbackAssistantAnswer", () => {
     assert.equal(result.sourceMode, "fallback");
     assert.match(result.answer, /आधिकारिक|भारत निर्वाचन आयोग|टाइमलाइन/);
   });
+
+  it("localizes fallback answers for Marathi users", () => {
+    const marathiProfile = { ...profile, language: "Marathi" as const };
+    const result = buildFallbackAssistantAnswer("What is the election timeline?", marathiProfile);
+
+    assert.equal(result.sourceMode, "fallback");
+    assert.match(result.answer, /अधिकृत|भारत निवडणूक आयोग/);
+  });
+});
+
+describe("buildSystemPrompt", () => {
+  it("builds a system prompt including user language and stage", () => {
+    const { buildSystemPrompt } = require("./assistant-fallback");
+    const prompt = buildSystemPrompt(profile);
+    assert.match(prompt, /Hindi/);
+    assert.match(prompt, /campaign-period/);
+  });
 });

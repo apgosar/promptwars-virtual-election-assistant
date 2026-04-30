@@ -23,7 +23,7 @@ describe("google services integration data", () => {
     const modes = new Set(googleServiceIntegrations.map((service) => service.mode));
     const products = googleServiceIntegrations.map((service) => service.product).join(" ");
 
-    assert.deepEqual(modes, new Set(["live", "demo", "planned"]));
+    assert.deepEqual(modes, new Set(["live", "demo"]));
     assert.match(products, /Gemini API/);
     assert.match(products, /Google Maps Platform/);
     assert.match(products, /Cloud Translation/);

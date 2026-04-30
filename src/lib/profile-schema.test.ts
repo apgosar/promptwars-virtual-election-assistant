@@ -16,7 +16,14 @@ describe("profile schema", () => {
     assert.deepEqual(VOTER_EXPERIENCES, ["first-time", "returning"]);
     assert.deepEqual(REGISTRATION_STATUSES, ["not-started", "in-progress", "completed"]);
     assert.deepEqual(USER_LANGUAGES, ["English", "Hindi", "Marathi"]);
-    assert.equal(ELECTION_STAGES.length, 6);
+    assert.deepEqual(ELECTION_STAGES, [
+      "registration-open",
+      "registration-closing",
+      "campaign-period",
+      "election-week",
+      "polling-day",
+      "results-and-followup"
+    ]);
   });
 
   it("accepts a complete valid profile", () => {
